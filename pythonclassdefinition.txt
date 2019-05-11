@@ -1,0 +1,128 @@
+#CLASSES
+#constructor declaration
+def __init__(self):
+    # body of the constructor
+
+#self constructors - definition & declaration
+class GeekforGeeks: 
+    geek = "" 
+  
+    # default constructor 
+    def __init__(self): 
+        self.geek = "GeekforGeeks"
+  
+    # a method for printing data members 
+    def print_Geek(self): 
+        print(self.geek) 
+  
+  
+# creating object of the class 
+obj = GeekforGeeks() 
+  
+# calling the instance method using the object obj 
+obj.print_Geek() 
+
+#Parameterized Constructors
+##PARAMETER PASSING
+lass Addition: 
+    first = 0
+    second = 0
+    answer = 0
+      
+    # parameterized constructor 
+    def __init__(self, f, s): 
+        self.first = f 
+        self.second = s 
+      
+    def display(self): 
+        print("First number = " + str(self.first)) 
+        print("Second number = " + str(self.second)) 
+        print("Addition of two numbers = " + str(self.answer)) 
+  
+    def calculate(self): 
+        self.answer = self.first + self.second 
+  
+# creating object of the class 
+# this will invoke parameterized constructor 
+obj = Addition(1000, 2000) 
+  
+# perform Addition 
+obj.calculate() 
+  
+# display result 
+obj.display() 
+
+#CLASS 
+class Shark:
+    def swim(self):
+        print("The shark is swimming.")
+
+    def be_awesome(self):
+        print("The shark is being awesome.")
+
+
+def main():
+    sammy = Shark()
+    sammy.swim()
+    sammy.be_awesome()
+
+if __name__ == "__main__":
+    main()
+
+
+#Definition1
+class Shark:
+    def __init__(self, name):
+        self.name = name
+
+    def swim(self):
+        # Reference the name
+        print(self.name + " is swimming.")
+
+    def be_awesome(self):
+        # Reference the name
+        print(self.name + " is being awesome.")
+
+
+
+#Definition2 - positional argument
+class Shark:
+    def __init__(self, name):
+        self.name = name
+
+    def swim(self):
+        print(self.name + " is swimming.")
+
+    def be_awesome(self):
+        print(self.name + " is being awesome.")
+
+
+def main():
+    # Set name of Shark object
+    sammy = Shark("Sammy")
+    sammy.swim()
+    sammy.be_awesome()
+
+if __name__ == "__main__":
+    main()
+
+#Definition3 - class instantiation
+class Shark:
+    def __init__(self, name):
+        self.name = name
+
+    def swim(self):
+        print(self.name + " is swimming.")
+
+    def be_awesome(self):
+        print(self.name + " is being awesome.")
+
+def main():
+    sammy = Shark("Sammy")
+    sammy.be_awesome()
+    stevie = Shark("Stevie")
+    stevie.swim()
+
+if __name__ == "__main__":
+  main()
+
