@@ -1,0 +1,103 @@
+try:  
+    a = 10/0
+    print (a)
+except ArithmeticError:  
+        print ("Arithmetic exception raised." )
+else:  
+    print ("Success.")
+
+
+try:
+    a=10
+    b=20
+    assert a==b, "Value mismatch"
+except AssertionError as e:
+    print(e)
+
+
+ry:
+    print ('Press Return or Ctrl+C:')
+    ignore = input()
+except KeyboardInterrupt:
+    print ('Caught KeyboardInterrupt')
+else:
+    print ('No exception')
+
+
+
+try:
+    a=int(5)
+    b=str
+    c=a+b
+except TypeError:
+    print ('Caught TypeError Exception')
+else:
+    print ('No exception')
+
+
+
+
+try:
+    print(int('a'))
+except ValueError:
+    print ('Caught ValueError Exception')
+else:
+    print ('No exception')
+
+
+
+Total_Marks = int(input("Enter Total Marks Scored: "))
+Num_of_Sections = int(input("Enter Num of Sections: "))
+Average = 0
+try:
+    Average = int(Total_Marks/Num_of_Sections)
+except ZeroDivisionError:
+    print("There has to be atleast 1 or more than 1 sections.")
+print("Average marks scored per section is: ",Average)
+
+
+
+try:
+    fp = open('myfile.txt')
+    line = f.readline()
+    i = int(s.strip())
+except (IOError,ValueError) as e:
+    print ("Please check the file,either the file is read-only or the data can't be converted to an integer.",e.errno)
+except:        #Note the use of except here,without any exception class, this can be used to handle all exception classes.
+    print ("Unexpected error")
+
+
+try:
+   fh = open("test", "w")
+   try:
+      fh.write("Test file!!")
+   finally:
+      print ("Closing the file")
+      fh.close()
+except IOError:
+   print ("Error: File not found or is read-only" )
+
+
+
+
+
+class UnAcceptedValueError(Exception):   
+    def __init__(self, data):    
+        self.data = data
+    def __str__(self):
+        return repr(self.data)
+
+Total_Marks = int(input("Enter Total Marks Scored: "))
+try:
+    Num_of_Sections = int(input("Enter Num of Sections: "))
+    if(Num_of_Sections < 1):
+        raise UnAcceptedValueError("Number of Sections can't be less than 1")
+except UnAcceptedValueError as e:
+    print ("Received error:", e.data)
+
+
+
+
+
+
+
